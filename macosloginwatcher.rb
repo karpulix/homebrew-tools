@@ -1,8 +1,8 @@
 class Macosloginwatcher < Formula
   desc "Monitor and notify about macOS login events via Telegram"
   homepage "https://github.com/karpulix/macosloginwatcher"
-  url "https://github.com/karpulix/macosloginwatcher/releases/download/v1.0.27/macosloginwatcher-1.0.27.tar.gz"
-  sha256 "b6cebc80d92f9bfb1498c4e810d26e2b8470878882dfa0c7b2ee6c61b70e90f7"
+  url "https://github.com/karpulix/macosloginwatcher/releases/download/v1.0.28/macosloginwatcher-1.0.28.tar.gz"
+  sha256 "922af0e007a6ea41e02cfdad5867d5403f482d0500c984c91e21421b43d7bd9b"
   license "MIT"
 
   def install
