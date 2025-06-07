@@ -1,8 +1,8 @@
 class Osxloginwatcher < Formula
   desc "Monitor and notify about macOS login events via Telegram"
   homepage "https://github.com/karpulix/osxloginwatcher"
-  url "https://github.com/karpulix/osxloginwatcher/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "8981a8eec7eee8b39d17c5285f43852ecd0c0167b030cf08050f726a71302768" # You'll need to replace this with actual SHA256
+  url "https://github.com/karpulix/osxloginwatcher/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "e808ef8b9f5b41f250897798e0d7d5ceee9241a3c1e05e6a0e59789bcf3ff056"
   license "MIT"
 
   def install
@@ -10,11 +10,15 @@ class Osxloginwatcher < Formula
     chmod 0755, bin/"osxloginwatcher"
   end
 
-  def post_install
-    system "osxloginwatcher", "--setup"
+  test do
+    assert_match "osxloginwatcher version", shell_output("#{bin}/osxloginwatcher --version")
   end
 
-  test do
-    system "osxloginwatcher", "--version"
+  def caveats
+    <<~EOS
+      After installation, run:
+        osxloginwatcher --setup
+      to configure your Telegram bot token and chat ID.
+    EOS
   end
 end 
